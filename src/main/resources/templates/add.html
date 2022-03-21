@@ -15,7 +15,7 @@
     <h5 th:text="${session.msg}"></h5>
 </div>
 <div>
-    <form th:action="@{/save}">
+    <form th:action="@{/save}" method="post">
         <div>
             <label for="studentName">Name</label>
             <input id="studentName" type="text" name="name">

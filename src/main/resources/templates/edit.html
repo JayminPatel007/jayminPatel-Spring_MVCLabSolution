@@ -8,6 +8,30 @@
     <title>Document</title>
 </head>
 <body>
+<div>
+    <h1>Edit</h1>
+</div>
+<div th:if="${session.msg}">
+    <h5 th:text="${session.msg}"></h5>
+</div>
+<div>
+    <form th:action="@{/update}" method="post">
+        <input type="hidden" th:value="${student.studentId}">
+        <div>
+            <label for="studentName">Name</label>
+            <input id="studentName" type="text" name="name" th:value="${student.name}">
+        </div>
+        <div>
+            <label for="department">Department</label>
+            <input id="department" type="text" name="department" th:value="${student.department}">
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input id="city" type="text" name="country" th:value="${student.country}">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>

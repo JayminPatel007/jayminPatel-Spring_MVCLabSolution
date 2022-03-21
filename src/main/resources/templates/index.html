@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+<div th:if="${session.msg}">
+    <h5 th:text="${session.msg}"></h5>
+</div>
 <div>
     <a href="add">Add product</a>
 </div>
@@ -29,8 +32,8 @@
             <td scope="row">[[${p.department}}]]</td>
             <td scope="row">[[${p.country}}]]</td>
             <th>
-                <a>Edit</a>
-                <a>Delete</a>
+                <a th:href="@{'/edit/'+${p.studentId}}">Edit</a>
+                <a th:href="@{'/delete/'+${p.studentId}}">Delete</a>
             </th>
         </tr>
         </tbody>
