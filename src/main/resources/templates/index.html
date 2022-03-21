@@ -19,10 +19,20 @@
             <th scope="col">Name</th>
             <th scope="col">Department</th>
             <th scope="col">City</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-
+        <tr th:each="p : ${all_student_regs}">
+            <td scope="row">[[${p.studentId}}]]</td>
+            <td scope="row">[[${p.name}}]]</td>
+            <td scope="row">[[${p.department}}]]</td>
+            <td scope="row">[[${p.country}}]]</td>
+            <th>
+                <a>Edit</a>
+                <a>Delete</a>
+            </th>
+        </tr>
         </tbody>
     </table>
 </div>

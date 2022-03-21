@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,29 @@
     <title>Document</title>
 </head>
 <body>
+<div>
+    <h1>Add</h1>
+</div>
+<div th:if="${session.msg}">
+    <h5 th:text="${session.msg}"></h5>
+</div>
+<div>
+    <form th:action="@{/save}">
+        <div>
+            <label for="studentName">Name</label>
+            <input id="studentName" type="text" name="name">
+        </div>
+        <div>
+            <label for="department">Department</label>
+            <input id="department" type="text" name="department">
+        </div>
+        <div>
+            <label for="city">City</label>
+            <input id="city" type="text" name="country">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>
